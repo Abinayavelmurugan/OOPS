@@ -1,0 +1,41 @@
+class Account:
+    def __init__(self,name,accno,bname):
+        self.name=name
+        self.accno=accno
+        self.bname=bname
+    def display(self):
+        print("Account Holder Name:",self.name)
+        print("Account Number:",self.accno)
+        print("Bank Name:",self.bname)
+class Additionalinfo1(Account):
+    def __init__(self,name,accno,bname,tinno):
+        super().__init__(name,accno,bname)
+        self.tinno=tinno
+    def display(self):
+        super().display()
+        print("Tin Bumber:",self.tinno)
+class Additionalinfo2(Account):
+    def __init__(self,name,accno,bname,oname):
+        super().__init__(name,accno,bname)
+        self.oname=oname
+    def display(self):
+        super().display()
+        print("Organization Name:",self.oname)
+name=input("Enter the Name: ")
+accno=int(input("Enter the Account number: "))
+bname=input("Enter the Account name: ")
+tinno=int(input("Enter the Tin number: "))
+oname=input("Enter the Organisation name: ")
+s=int(input())
+if s==1:
+    obj=Account(name,accno,bname)
+   
+elif s==2:
+    obj=Additionalinfo1(name,accno,bname,tinno)
+ 
+elif s==3:
+    obj=Additionalinfo2(name,accno,bname,oname)
+   
+else:
+    print("Invalid choice")
+obj.display()    
